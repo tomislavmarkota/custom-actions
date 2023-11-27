@@ -11,9 +11,9 @@ inputs:
 # key name that is up to you
 outputs:
   used-cache:
-  description: 'Whether the cache was used.'
+    description: 'Whether the cache was used.'
 # connect value with id in the install dep. step
-  value: ${{ steps.install.outputs.cache }}
+    value: ${{ steps.install.outputs.cache }}
 
 runs:
   using: "composite"
