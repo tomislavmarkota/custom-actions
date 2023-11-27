@@ -1,5 +1,3 @@
-# custom composite action
-# https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 name: 'Get & Cache Dependencies'
 description: 'Get the dependencies(via npm) and cache them'
 runs: 
@@ -15,4 +13,3 @@ runs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
       shell: bash
-# if we using run key we need to use shell key
