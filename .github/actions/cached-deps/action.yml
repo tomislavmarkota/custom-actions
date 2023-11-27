@@ -11,8 +11,8 @@ inputs:
 # key name that is up to you
 outputs:
   used-cache:
-    description: 'Whether the cache was used.'
-# connect value with id in the install dep. step
+    description: "Whether the cache was used."
+    # connect value with id in the install dep. step
     value: ${{ steps.install.outputs.cache }}
 
 runs:
@@ -28,7 +28,7 @@ runs:
     - name: Install dependencies
       id: install
       if: steps.cache.outputs.cache-hit != 'true' || inputs.caching != 'true'
-      run: | 
-      npm ci
-      echo "cache='${{ inputs.caching }}'" >> $GITHUB_OUTPUT
+      run: |
+        npm ci
+        echo "cache='${{ inputs.caching }}'" >> $GITHUB_OUTPUT
       shell: bash
